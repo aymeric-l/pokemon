@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  justify-content: center;
+  overflow: hidden; }
+  body img {
+    transform: scale(5.5);
+    position: absolute;
+    top: 800px;
+    left: 500px;
+    z-index: 1; }
+
+#personnage {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  z-index: 6000;
+  left: 670px;
+  top: 300px;
+  background: url("../map/sacha.png"); }
