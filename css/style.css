@@ -3,17 +3,16 @@ body {
   justify-content: center;
   overflow: hidden; }
   body img {
-    transform: scale(5.5);
     position: absolute;
-    top: 800px;
-    left: 500px;
+    top: -770px;
+    left: -790px;
     z-index: 1; }
 
 #personnage {
   position: absolute;
   height: 100px;
-  width: 100px;
+  width: 80px;
   z-index: 6000;
-  left: 670px;
-  top: 300px;
+  top: 45%;
+  align-self: center;
   background: url("../map/sacha.png"); }

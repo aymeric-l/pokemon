@@ -1,5 +1,5 @@
-var gauche = 500;
-var haut = 800;
+var gauche = -790;
+var haut = -770;
 var keys = {};
 
 $(window).on("keyup keydown", function (e) {
@@ -7,19 +7,19 @@ $(window).on("keyup keydown", function (e) {
     keys[e.keyCode] = e.type === 'keydown';
 
     if (keys[90]) {
-        haut = haut+100;
+        haut = haut+80;
 	$("#img").animate({top: (+haut+('px'))}, "fast");
     }
     if (keys[83]) {
-        haut = haut-100;
+        haut = haut-80;
 	$("#img").animate({top: (+haut+('px'))}, "fast");
     }
     if (keys[81]) {
-        gauche = gauche+100;
+        gauche = gauche+80;
 	$("#img").animate({left: (+gauche+('px'))}, "fast");
     }
     if (keys[68]) {
-        gauche = gauche-100;
+        gauche = gauche-80;
 	$("#img").animate({left: (+gauche+('px'))}, "fast");
     }
 });
