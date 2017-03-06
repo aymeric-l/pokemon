@@ -2,6 +2,8 @@ var gauche = -825;
 var haut = -870;
 var MaisonTop = 420;
 var MaisonLeft = 650;
+var maisonBleuTop = 975;
+var maisonBleuLeft = 55;
 var keys = {};
 var deplacement = true;
 
@@ -32,13 +34,20 @@ window.addEventListener("keydown", function dep (event) {
         else if(gauche ==  -985 && haut == -950){}
         else if(gauche ==  -905 && haut == -950){}
         else if(gauche ==  -825 && haut == -950){}
+        else if(gauche ==  -665 && haut == -1350){}
+        else if(gauche ==  -345 && haut == -1510){}
+        else if(gauche ==  -425 && haut == -1510){}
+        else if(gauche ==  -505 && haut == -1510){}
+        else if(gauche ==  -585 && haut == -1510){}
 
         else{
     haut = haut-80;
     MaisonTop = MaisonTop-80;
+    maisonBleuTop = maisonBleuTop-80;
     console.log('yy');
     $("#img").animate({top: (+haut+('px'))}, 300);
     $("#maison").animate({top: (+MaisonTop+('px'))}, 300);
+    $("#maisonBleu").animate({top: (+maisonBleuTop+('px'))}, 300);
     deplacement = false;
 
     setTimeout(function(){
@@ -77,11 +86,18 @@ if (event.keyCode == 90) {
         else if(gauche ==  -1225 && haut == -1830){}
         else if(gauche ==  -1305 && haut == -1830){}
         else if(gauche ==  -1385 && haut == -1750){}
+        else if(gauche ==  -665 && haut == -1510){}
+        else if(gauche ==  -585 && haut == -1830){}
+        else if(gauche ==  -505 && haut == -1830){}
+        else if(gauche ==  -425 && haut == -1830){}
+        else if(gauche ==  -345 && haut == -1830){}
         else{
     haut = haut+80;
     MaisonTop = MaisonTop+80;
+    maisonBleuTop = maisonBleuTop+80;
     $("#img").animate({top: (+haut+('px'))}, 300);
     $("#maison").animate({top: (+MaisonTop+('px'))}, 300);
+    $("#maisonBleu").animate({top: (+maisonBleuTop+('px'))}, 300);
     deplacement = false;
 
     setTimeout(function(){
@@ -100,11 +116,17 @@ if (event.keyCode == 81) {
         else if(gauche ==  -1225 && haut == -1110){}
         else if(gauche ==  -1145 && haut == -1030){}
         else if(gauche ==  -1385 && haut == -1750){}
+        else if(gauche ==  -745 && haut == -1430){}
+        else if(gauche ==  -665 && haut == -1590){}
+        else if(gauche ==  -665 && haut == -1670){}
+        else if(gauche ==  -665 && haut == -1750){}
         else{
     gauche = gauche+80;
     MaisonLeft = MaisonLeft+80;
+    maisonBleuLeft = maisonBleuLeft+80;
     $("#img").animate({left: (+gauche+('px'))}, 300);
     $("#maison").animate({left: (+MaisonLeft+('px'))}, 300);
+    $("#maisonBleu").animate({left: (+maisonBleuLeft+('px'))}, 300);
     deplacement = false;
 
     setTimeout(function(){
@@ -140,11 +162,17 @@ if (event.keyCode == 68) {
         else if(gauche ==  -1065 && haut == -1670){}
         else if(gauche ==  -1065 && haut == -1750){}
         else if(gauche ==  -1385 && haut == -1750){}
+        else if(gauche ==  -585 && haut == -1430){}
+        else if(gauche ==  -265 && haut == -1750){}
+        else if(gauche ==  -265 && haut == -1670){}
+        else if(gauche ==  -265 && haut == -1590){}
         else{
     gauche = gauche-80;
     MaisonLeft = MaisonLeft-80;
+    maisonBleuLeft = maisonBleuLeft-80;
     $("#img").animate({left: (+gauche+('px'))}, 300);
     $("#maison").animate({left: (+MaisonLeft+('px'))}, 300);
+    $("#maisonBleu").animate({left: (+maisonBleuLeft+('px'))}, 300);
     deplacement = false;
 
     setTimeout(function(){
