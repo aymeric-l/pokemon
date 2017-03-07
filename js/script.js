@@ -1,17 +1,29 @@
 var gauche = -825;
 var haut = -870;
-var MaisonTop = 420;
-var MaisonLeft = 650;
-var maisonBleuTop = 975;
-var maisonBleuLeft = 55;
+var MaisonTop = 430;
+var MaisonLeft = 666;
+var maisonBleuTop = 985;
+var maisonBleuLeft = 68;
 var keys = {};
 var deplacement = true;
+
+var taille = $(window).width();
+var tailleL = taille-1280;
+var centre = 600+(tailleL/2);
+
+$("#personnage").animate({left: (+centre+('px'))}, 1600);
 
 
 window.addEventListener("keydown", function dep (event) {
 
 ////// BAS ///////
   if (event.keyCode == 83) {
+    if($(window).width() != taille){
+        taille = $(window).width();
+        tailleL = ($(window).width())-1280;
+        centre = centre = 600+(tailleL/2);
+        $("#personnage").animate({left: (+centre+('px'))}
+        , 10);}
     if(deplacement == true){
         if(gauche ==  -1305 && haut == -550){}
         else if(gauche ==  -2345 && haut == -870){}
@@ -44,21 +56,28 @@ window.addEventListener("keydown", function dep (event) {
     haut = haut-80;
     MaisonTop = MaisonTop-80;
     maisonBleuTop = maisonBleuTop-80;
-    console.log('yy');
     $("#img").animate({top: (+haut+('px'))}, 300);
+    //$("#img").css({'margin-top': haut},300);
     $("#maison").animate({top: (+MaisonTop+('px'))}, 300);
     $("#maisonBleu").animate({top: (+maisonBleuTop+('px'))}, 300);
     deplacement = false;
+    console.log(tailleL);
 
     setTimeout(function(){
     deplacement = true;
-    },301);
+    },300);
 }
 }
 }
 
 ////// HAUT ///////
 if (event.keyCode == 90) {
+    if($(window).width() != taille){
+        taille = $(window).width();
+        tailleL = ($(window).width())-1280;
+        centre = centre = 600+(tailleL/2);
+        $("#personnage").animate({left: (+centre+('px'))}
+        , 10);}
     if(deplacement == true){
         /// COLLISION ///
         if(gauche == -1305 && haut == -710){}
@@ -109,6 +128,12 @@ if (event.keyCode == 90) {
 
 ////// GAUCHE ///////
 if (event.keyCode == 81) {
+    if($(window).width() != taille){
+        taille = $(window).width();
+        tailleL = ($(window).width())-1280;
+        centre = centre = 600+(tailleL/2);
+        $("#personnage").animate({left: (+centre+('px'))}
+        , 10);}
     if(deplacement == true){
         /// COLLISION ///
         if(gauche == -1945 && haut == -630){}
@@ -138,6 +163,12 @@ if (event.keyCode == 81) {
 
 ////// DROITE //////
 if (event.keyCode == 68) {
+    if($(window).width() != taille){
+        taille = $(window).width();
+        tailleL = ($(window).width())-1280;
+        centre = centre = 600+(tailleL/2);
+        $("#personnage").animate({left: (+centre+('px'))}
+        , 10);}
     if(deplacement == true){
         /// COLLISION ///
         if(gauche == -1225 && haut == -630){}
