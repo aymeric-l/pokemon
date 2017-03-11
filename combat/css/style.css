@@ -1,0 +1,91 @@
+html {
+  padding: 0;
+  margin: 0; }
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; }
+
+#contenaire {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  height: 600px;
+  border: 3px solid black; }
+
+#un {
+  height: 400px;
+  display: flex;
+  flex-direction: column; }
+  #un #unUn, #un #unDeux {
+    display: flex;
+    flex-direction: row; }
+  #un #unUn #pousser {
+    width: 300px; }
+  #un #infoEnnemi {
+    width: 100px;
+    height: 50%; }
+  #un #info {
+    width: 100px;
+    height: 50%;
+    color: red; }
+  #un #ennemi, #un #pokemon {
+    width: 50%;
+    height: 50%; }
+  #un #ennemi {
+    display: flex;
+    justify-content: center; }
+    #un #ennemi img {
+      height: 80%;
+      margin-top: 20px; }
+  #un #pokemon {
+    display: flex;
+    justify-content: center; }
+    #un #pokemon img {
+      height: 80%;
+      margin-top: 20px; }
+  #un #info {
+    border: 1px solid black;
+    margin-top: 130px; }
+
+#deux {
+  height: 200px;
+  display: flex;
+  flex-direction: row; }
+
+#textChoix {
+  flex: 1;
+  border: 1px solid black; }
+  #textChoix p {
+    font-size: 35px; }
+
+#choix {
+  border: 1px solid black;
+  flex: 1; }
+  #choix p {
+    font-size: 20px; }
+
+#choixUn {
+  padding-top: 30px;
+  padding-left: 50px; }
+
+#infoEnnemi {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin-top: 40px;
+  color: blue; }
+  #infoEnnemi #infoEnnemiHau {
+    height: 50%;
+    display: flex;
+    flex-direction: row; }
+    #infoEnnemi #infoEnnemiHau #nom, #infoEnnemi #infoEnnemiHau #niveau {
+      width: 50%; }
+  #infoEnnemi #infoEnnemiBa {
+    height: 50%;
+    display: flex;
+    flex-direction: row; }
+    #infoEnnemi #infoEnnemiBa #espace, #infoEnnemi #infoEnnemiBa #vie {
+      width: 50%; }
