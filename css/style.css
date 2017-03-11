@@ -26,6 +26,15 @@ body {
   z-index: 6000;
   background: url("../map/sacha.png"); }
 
+#joueurDeux {
+  position: absolute;
+  top: 300px;
+  left: 300px;
+  height: 100px;
+  width: 80px;
+  z-index: 5000;
+  background: url("../map/joueurDeux.png"); }
+
 #maison {
   position: fixed;
   top: 430px;
