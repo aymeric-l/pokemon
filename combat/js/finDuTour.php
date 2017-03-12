@@ -15,6 +15,9 @@
 	$dmg =  $listePokemon[1][3] - $listeAttaque[0][3];
 	$degat = $bdd->prepare('UPDATE pokemon SET vie='.$dmg.' WHERE nom="CARAPUCE"')->execute();
 
-	echo '<script> setTimeout(function(){ $("#pousser").html(""); }, 3000); </script><h2>'.$listePokemon[0][1].' inflige '.$listeAttaque[0][3].' points de dégats à '.$listePokemon[1][1].'.</h2>';
+	echo '<h2>'.$listePokemon[0][1].' inflige '.$listeAttaque[0][3].' points de dégats à '.$listePokemon[1][1].'.</h2><script> setTimeout(function(){ $("#pousser").html(""); }, 3000); </script>';
+
+	echo '<script> setTimeout(function(){ $("#deux").html("<div id=\'textChoix\'><p>Que doit faire SALAMECHE ?</p></div><div id=\'choix\' onClick=\'choix();\'><div id=\'choixUn\'><p>ATTAQUE</p></div></div>"); }, 3000);
+		 </script>';
 
 ?>

@@ -49,7 +49,9 @@ foreach ($attaque as $valueATK) {
 		<p>Que doit faire SALAMECHE ?</p>
 	</div>
 	<div id="choix">
-		<div id="choixUn"><p>ATTAQUE</p></div>
+		<div id="choixUn">
+		<p>ATTAQUE</p>
+		</div>
 	</div>
 </div>
 
