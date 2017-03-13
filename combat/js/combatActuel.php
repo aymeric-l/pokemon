@@ -1,6 +1,7 @@
 <?php 
 	$bdd = new PDO('mysql:host=localhost;dbname=combat;charset=utf8', 'root', '' );
-	$combat = $bdd->query('SELECT * FROM pokemon');
+	$pseudoJoueurCo = $_COOKIE['pseudo'];
+	$combat = $bdd->query('SELECT * FROM pokemon WHERE proprio="'.$pseudoJoueurCo.'"');
 	$listePokemon = [];
 	foreach ($combat as $value) {
 	array_push($listePokemon, $value);

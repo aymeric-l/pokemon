@@ -1,9 +1,17 @@
 	<?php 
 $bdd = new PDO('mysql:host=localhost;dbname=combat;charset=utf8', 'root', '' );
-$combat = $bdd->query('SELECT * FROM pokemon');
+$pseudoJoueurCo = $_COOKIE['pseudo'];
+$adversaire = $_COOKIE['adversaire'];
+$combat = $bdd->query('SELECT * FROM pokemon WHERE proprio="'.$pseudoJoueurCo.'"');
+$adverse = $bdd->query('SELECT * FROM pokemon WHERE proprio="'.$adversaire.'"');
 $listePokemon = [];
 foreach ($combat as $value) {
 	array_push($listePokemon, $value);
+}
+
+$listePokemonAdverse = [];
+foreach ($adverse as $valueAdverse) {
+	array_push($listePokemonAdverse, $valueAdverse);
 }
 
 $attaque = $bdd->query('SELECT * FROM attaques');
@@ -28,14 +36,14 @@ foreach ($attaque as $valueATK) {
 
 <div id="un">
 <div id="unUn">
-	<div id="pousser"><?php echo $_SESSION['pseudo']; ?></div>
+	<div id="pousser"><?php echo $_COOKIE['pseudo'].' VS '.$_COOKIE['adversaire']; ?></div>
 		<div id="infoEnnemi">
 		<?php include('js/combatActuelEnnemi.php'); ?>
 		</div>
-		<div id="ennemi"><img src="pokemon/carapuce.png"></div>
+		<div id="ennemi"><?php echo '<img src="pokemon/'.$listePokemonAdverse[0][1].'.png"></div>'; ?>
 	</div>
 	<div id="unDeux">
-		<div id="pokemon"><img src="pokemon/salameche.png"></div>
+		<div id="pokemon"><?php echo '<img src="pokemon/'.$listePokemon[0][1].'.png"></div>'; ?>
 		<div id="info">
 		<?php include('js/combatActuel.php'); ?>
 		</div>
