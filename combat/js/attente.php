@@ -1,6 +1,7 @@
 <?php 
 	$bdd = new PDO('mysql:host=localhost;dbname=combat;charset=utf8', 'root', '' );
 	$joueurs = $bdd->query('SELECT * FROM joueurs WHERE pseudo="robert" ');
+	$pret = $bdd->prepare('UPDATE joueurs SET etat="2" WHERE pseudo="aymeric" ')->execute();
 	$listeJoueurs = [];
 	foreach ($joueurs as $valueJoueurs) {
 		array_push($listeJoueurs, $valueJoueurs);
