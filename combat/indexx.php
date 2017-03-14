@@ -1,6 +1,7 @@
 	<?php 
 $bdd = new PDO('mysql:host=localhost;dbname=combat;charset=utf8', 'root', '' );
-$pseudoJoueurCo = $_COOKIE['pseudo'];
+if(!isset($_COOKIE['pseudo'])){$pseudoJoueurCo = 'bug';}
+else{$pseudoJoueurCo = $_COOKIE['pseudo'];}
 $adversaire = $_COOKIE['adversaire'];
 $combat = $bdd->query('SELECT * FROM pokemon WHERE proprio="'.$pseudoJoueurCo.'"');
 $adverse = $bdd->query('SELECT * FROM pokemon WHERE proprio="'.$adversaire.'"');
@@ -31,12 +32,12 @@ foreach ($attaque as $valueATK) {
 	
 </head>
 <body>
-
+<?php if($pseudoJoueurCo == 'bug'){header('Location: index.php');} ?>
 <div id="contenaire">
 
 <div id="un">
 <div id="unUn">
-	<div id="pousser"><?php echo $_COOKIE['pseudo'].' VS '.$_COOKIE['adversaire']; ?></div>
+	<div id="pousser"><?php //echo $_COOKIE['pseudo'].' VS '.$_COOKIE['adversaire']; ?></div>
 		<div id="infoEnnemi">
 		<?php include('js/combatActuelEnnemi.php'); ?>
 		</div>
@@ -66,3 +67,4 @@ foreach ($attaque as $valueATK) {
 <?php include('js/script.php'); ?>
 </body>
 </html>
+<?php header('index.php'); ?>
