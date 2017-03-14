@@ -37,14 +37,14 @@ foreach ($attaque as $valueATK) {
 
 <div id="un">
 <div id="unUn">
-	<div id="pousser"><?php //echo $_COOKIE['pseudo'].' VS '.$_COOKIE['adversaire']; ?></div>
+	<div id="pousser"></div>
 		<div id="infoEnnemi">
 		<?php include('js/combatActuelEnnemi.php'); ?>
 		</div>
-		<div id="ennemi"><?php echo '<img src="pokemon/'.$listePokemonAdverse[0][1].'.png"></div>'; ?>
+		<div id="ennemi"><?= '<img src="pokemon/'.$listePokemonAdverse[0][1].'.png"></div>'; ?>
 	</div>
 	<div id="unDeux">
-		<div id="pokemon"><?php echo '<img src="pokemon/'.$listePokemon[0][1].'.png"></div>'; ?>
+		<div id="pokemon"><?= '<img src="pokemon/'.$listePokemon[0][1].'.png"></div>'; ?>
 		<div id="info">
 		<?php include('js/combatActuel.php'); ?>
 		</div>
@@ -54,7 +54,7 @@ foreach ($attaque as $valueATK) {
 
 <div id="deux">
 	<div id="textChoix">
-		<p>Que doit faire SALAMECHE ?</p>
+		<p>Que doit faire <?= $listePokemon[0][1]; ?> ?</p>
 	</div>
 	<div id="choix">
 		<div id="choixUn">

@@ -18,8 +18,7 @@
 		      //setTimeout(actu, 1000);
 		   });
 		}      
-</script> 
-<script type="text/javascript">
+
 		function combat() {
 		   $.ajax({
 		      type: "GET",
@@ -36,9 +35,7 @@
 		   });
 		}  
 		combat();    
-</script> 
 
-<script type="text/javascript">
 
 
 function choix() {

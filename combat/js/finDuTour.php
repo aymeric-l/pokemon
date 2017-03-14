@@ -47,7 +47,7 @@
 
 	echo '<p><span style="color:red">'.$resultatVieAdverse[0][1].'</span> inflige <span style="color:blue">'.$listeAttaque[0][3].'</span> points de dégats à <span style="color:green">VOTRE '.$resultatVie[0][1].'</span></br></br>ET</br></br><span style="color:green">VOTRE '.$resultatVie[0][1].'</span> inflige <span style="color:blue">'.$listeAttaque[0][3].'</span> points de dégats à <span style="color:red"> '.$resultatVieAdverse[0][1].'</span>.</p><script> setTimeout(function(){ $("#pousser").html(""); }, 5000); </script>';
 
-	echo '<script> setTimeout(function(){ $("#deux").html("<div id=\'textChoix\'><p>Que doit faire SALAMECHE ?</p></div><div id=\'choix\' onClick=\'choix();\'><div id=\'choixUn\'><p>ATTAQUE</p></div></div>"); }, 5000);
+	echo '<script> setTimeout(function(){ $("#deux").html("<div id=\'textChoix\'><p>Que doit faire '.$pokemonActuel.' ?</p></div><div id=\'choix\' onClick=\'choix();\'><div id=\'choixUn\'><p>ATTAQUE</p></div></div>"); }, 5000);
 		 </script>';
 
 	$bdd = new PDO('mysql:host=localhost;dbname=combat;charset=utf8', 'root', '' );
