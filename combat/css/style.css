@@ -28,7 +28,6 @@ body {
         height: 50%;
         display: flex;
         flex-direction: column;
-        border: 1px solid black;
         margin-top: 40px;
         color: blue; }
       #contenaire #un #unUn #ennemi {
@@ -43,15 +42,14 @@ body {
       display: flex;
       flex-direction: row; }
       #contenaire #un #unDeux #pokemon {
-        width: 50%;
-        height: 50%;
+        width: 300px;
+        height: 300px;
         display: flex;
         justify-content: center; }
         #contenaire #un #unDeux #pokemon img {
           height: 80%;
           margin-top: 20px; }
       #contenaire #un #unDeux #info {
-        border: 1px solid black;
         margin-top: 130px;
         width: 100px;
         height: 50%;

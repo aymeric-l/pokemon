@@ -6,7 +6,7 @@
 	$attaqueUneResultat = $attaqueUne->fetchALL();
 	$joueurs = $bdd->query('SELECT * FROM joueurs WHERE pseudo="'.$adversaire.'" ');
 	$pret = $bdd->prepare('UPDATE joueurs SET etat="2" WHERE pseudo="'.$pseudoJoueurCo.'" ')->execute();
-	$lastAttaque = $bdd->prepare('UPDATE joueurs SET derniereAttaque="'.$attaqueUneResultat[0]['attaqueUne'].'" WHERE pseudo="'.$pseudoJoueurCo.'" ')->execute();
+	$lastAttaque = $bdd->prepare('UPDATE joueurs SET derniereAttaque="'.$attaqueUneResultat[0]['attaqueDeux'].'" WHERE pseudo="'.$pseudoJoueurCo.'" ')->execute();
 	$listeJoueurs = [];
 	foreach ($joueurs as $valueJoueurs) {
 		array_push($listeJoueurs, $valueJoueurs);

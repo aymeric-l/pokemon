@@ -5,6 +5,7 @@ else{$pseudoJoueurCo = $_COOKIE['pseudo'];}
 $adversaire = $_COOKIE['adversaire'];
 $combat = $bdd->query('SELECT * FROM pokemon WHERE proprio="'.$pseudoJoueurCo.'"');
 $adverse = $bdd->query('SELECT * FROM pokemon WHERE proprio="'.$adversaire.'"');
+
 $listePokemon = [];
 foreach ($combat as $value) {
 	array_push($listePokemon, $value);
@@ -44,7 +45,7 @@ foreach ($attaque as $valueATK) {
 		<div id="ennemi"><?= '<img src="pokemon/'.$listePokemonAdverse[0][1].'.png"></div>'; ?>
 	</div>
 	<div id="unDeux">
-		<div id="pokemon"><?= '<img src="pokemon/'.$listePokemon[0][1].'.png"></div>'; ?>
+		<div id="pokemon"><?= '<img src="pokemon/'.$listePokemon[0][1].'DOS.png"></div>'; ?>
 		<div id="info">
 		<?php include('js/combatActuel.php'); ?>
 		</div>
