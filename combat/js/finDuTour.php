@@ -51,6 +51,5 @@
 		 </script>';
 
 	$bdd = new PDO('mysql:host=localhost;dbname=combat;charset=utf8', 'root', '' );
-	//$joueurs = $bdd->query('SELECT * FROM joueurs WHERE pseudo="robert" ');
 	$finTour = $bdd->prepare('UPDATE joueurs SET etat="1" WHERE pseudo="'.$pseudoJoueurCo.'" ')->execute();
 ?>
