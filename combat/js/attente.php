@@ -4,13 +4,10 @@
 	$bdd = new PDO('mysql:host=localhost;dbname=combat;charset=utf8', 'root', '' );
 	$attaqueUne = $bdd->query('SELECT * FROM pokemon WHERE proprio="'.$pseudoJoueurCo.'" ');
 	$attaqueUneResultat = $attaqueUne->fetchALL();
-	$joueurs = $bdd->query('SELECT * FROM joueurs WHERE pseudo="'.$adversaire.'" ');
+	$listeJoueurs = $joueurs = $bdd->query('SELECT * FROM joueurs WHERE pseudo="'.$adversaire.'" ')->fetchALL();
 	$pret = $bdd->prepare('UPDATE joueurs SET etat="2" WHERE pseudo="'.$pseudoJoueurCo.'" ')->execute();
 	$lastAttaque = $bdd->prepare('UPDATE joueurs SET derniereAttaque="'.$attaqueUneResultat[0]['attaqueUne'].'" WHERE pseudo="'.$pseudoJoueurCo.'" ')->execute();
-	$listeJoueurs = [];
-	foreach ($joueurs as $valueJoueurs) {
-		array_push($listeJoueurs, $valueJoueurs);
-	}
+
 	if($listeJoueurs[0][2] == 1){
 		echo $listeJoueurs[0][1].' n\'a pas encore joué';
 		echo '<script> setTimeout(function(){ attente(); }, 1000); </script>';

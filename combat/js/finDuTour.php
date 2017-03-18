@@ -2,46 +2,27 @@
 	$bdd = new PDO('mysql:host=localhost;dbname=combat;charset=utf8', 'root', '' );
 	$pseudoJoueurCo = $_COOKIE['pseudo'];
 	$adversaire = $_COOKIE['adversaire'];
-	$attaque = $bdd->query('SELECT * FROM attaques');
-	$listeAttaque = [];
-	foreach ($attaque as $valueATK) {
-		array_push($listeAttaque, $valueATK);
-	}
+	$listeAttaque = $attaque = $bdd->query('SELECT * FROM attaques')->fetchALL();
 
-// 	$combat = $bdd->query('SELECT * FROM pokemon');
-// 	$listePokemon = [];
-// 	foreach ($combat as $value) {
-// 		array_push($listePokemon, $value);
-// }
-
-	$joueursAdverse = $bdd->query('SELECT * FROM joueurs WHERE pseudo="'.$adversaire.'" ');
-	$joueur = $bdd->query('SELECT * FROM joueurs WHERE pseudo="'.$pseudoJoueurCo.'" ');
+	$listeJoueurs = $joueursAdverse = $bdd->query('SELECT * FROM joueurs WHERE pseudo="'.$adversaire.'" ')->fetchALL();
+	$liste = $joueur = $bdd->query('SELECT * FROM joueurs WHERE pseudo="'.$pseudoJoueurCo.'" ')->fetchALL();
 	////////////
-	$liste = [];
-	foreach ($joueur as $valueJoueur) {
-		array_push($liste, $valueJoueur);
-	}
+
 	$pokemonActuel = $liste[0][3];
-	/////////////////
-	$listeJoueurs = [];
-	foreach ($joueursAdverse as $valueJoueurs) {
-		array_push($listeJoueurs, $valueJoueurs);
+	$attaqueLancee = $liste[0][4];
+	foreach ($listeAttaque as $valueee) {
+		if($valueee[1] == $attaqueLancee){
+			$resultatAttaqueLancee = $valueee[3];
+		}
 	}
+
 	$pokemonAdverseActuel = $listeJoueurs[0][3];
 	//////////////////
-	$rechercheVie = $bdd->query('SELECT * FROM pokemon WHERE nom="'.$pokemonActuel.'" AND proprio="'.$pseudoJoueurCo.'"');
-	$rechercheVieAdverse = $bdd->query('SELECT * FROM pokemon WHERE nom="'.$pokemonAdverseActuel.'" AND proprio="'.$adversaire.'"');
-	$resultatVieAdverse = [];
-		foreach ($rechercheVieAdverse as $valueResultat) {
-			array_push($resultatVieAdverse, $valueResultat);
-		}
-	$resultatVie = [];
-		foreach ($rechercheVie as $valueVie) {
-			array_push($resultatVie, $valueVie);
-		}
+	$resultatVie = $rechercheVie = $bdd->query('SELECT * FROM pokemon WHERE nom="'.$pokemonActuel.'" AND proprio="'.$pseudoJoueurCo.'"')->fetchALL();
+	$resultatVieAdverse = $rechercheVieAdverse = $bdd->query('SELECT * FROM pokemon WHERE nom="'.$pokemonAdverseActuel.'" AND proprio="'.$adversaire.'"')->fetchALL();
 
 
-	$dmg =  $resultatVieAdverse[0][3] - $listeAttaque[0][3];
+	$dmg =  $resultatVieAdverse[0][3] - $resultatAttaqueLancee;
 	$degat = $bdd->prepare('UPDATE pokemon SET vie="'.$dmg.'" WHERE nom="'.$pokemonAdverseActuel.'" AND proprio="'.$adversaire.'" ')->execute();
 
 
@@ -50,6 +31,6 @@
 	echo '<script> setTimeout(function(){ $("#deux").html("<div id=\'textChoix\'><p>Que doit faire '.$pokemonActuel.' ?</p></div><div id=\'choix\' onClick=\'choix();\'><div id=\'choixUn\'><p>ATTAQUE</p></div></div>"); }, 5000);
 		 </script>';
 
-	$bdd = new PDO('mysql:host=localhost;dbname=combat;charset=utf8', 'root', '' );
+	//$bdd = new PDO('mysql:host=localhost;dbname=combat;charset=utf8', 'root', '' );
 	$finTour = $bdd->prepare('UPDATE joueurs SET etat="1" WHERE pseudo="'.$pseudoJoueurCo.'" ')->execute();
 ?>

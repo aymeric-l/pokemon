@@ -3,24 +3,11 @@ $bdd = new PDO('mysql:host=localhost;dbname=combat;charset=utf8', 'root', '' );
 if(!isset($_COOKIE['pseudo'])){$pseudoJoueurCo = 'bug';}
 else{$pseudoJoueurCo = $_COOKIE['pseudo'];}
 $adversaire = $_COOKIE['adversaire'];
-$combat = $bdd->query('SELECT * FROM pokemon WHERE proprio="'.$pseudoJoueurCo.'"');
-$adverse = $bdd->query('SELECT * FROM pokemon WHERE proprio="'.$adversaire.'"');
+$listePokemon = $combat = $bdd->query('SELECT * FROM pokemon WHERE proprio="'.$pseudoJoueurCo.'"')->fetchALL();
+$listePokemonAdverse = $adverse = $bdd->query('SELECT * FROM pokemon WHERE proprio="'.$adversaire.'"')->fetchALL();
 
-$listePokemon = [];
-foreach ($combat as $value) {
-	array_push($listePokemon, $value);
-}
+$listeAttaque = $attaque = $bdd->query('SELECT * FROM attaques')->fetchALL();
 
-$listePokemonAdverse = [];
-foreach ($adverse as $valueAdverse) {
-	array_push($listePokemonAdverse, $valueAdverse);
-}
-
-$attaque = $bdd->query('SELECT * FROM attaques');
-$listeAttaque = [];
-foreach ($attaque as $valueATK) {
-	array_push($listeAttaque, $valueATK);
-	}
 ?>
 
 <!DOCTYPE html>
