@@ -42,12 +42,19 @@ $listeAttaque = $attaque = $bdd->query('SELECT * FROM attaques')->fetchALL();
 
 <div id="deux">
 	<div id="textChoix">
-		<p>Que doit faire <?= $listePokemon[0][1]; ?> ?</p>
+	<?php if($listePokemon[0][3] > 0){
+		echo '<p>Que doit faire '.$listePokemon[0][1].' ?</p>';
+	}
+	?>
 	</div>
 	<div id="choix">
-		<div id="choixUn">
-		<p>ATTAQUE</p>
-		</div>
+	<?php if($listePokemon[0][3] <= 0){
+		echo 'Vos pokémon sont K.O.</br>Veuillez contacter un administrateur pour les soigner !';
+	}else {
+		echo '<div id="choixUn">';
+		echo '<p>ATTAQUE</p>';
+		echo '</div>';
+	}?>
 	</div>
 </div>
 
