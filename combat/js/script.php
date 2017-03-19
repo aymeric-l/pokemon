@@ -5,8 +5,7 @@
 		      type: "GET",
 		      url: "js/finDuTour.php"
 		   }).done(function (html) {
-		      $('#pousser').html(html); // Retourne dans #maDiv le contenu de ta page
-		      //setTimeout(actu, 1000);
+		      $('#pousser').html(html); 
 		   });
 		} 
 		function attente() {
@@ -14,8 +13,7 @@
 		      type: "GET",
 		      url: "js/attente.php"
 		   }).done(function (html) {
-		      $('#pousser').html(html); // Retourne dans #maDiv le contenu de ta page
-		      //setTimeout(actu, 1000);
+		      $('#pousser').html(html);
 		   });
 		}   
 
@@ -24,23 +22,40 @@
 		      type: "GET",
 		      url: "js/attenteDeux.php"
 		   }).done(function (html) {
-		      $('#pousser').html(html); // Retourne dans #maDiv le contenu de ta page
-		      //setTimeout(actu, 1000);
+		      $('#pousser').html(html); 
 		   });
 		}   
+
+		function attenteTrois() {
+		   $.ajax({
+		      type: "GET",
+		      url: "js/attenteTrois.php"
+		   }).done(function (html) {
+		      $('#pousser').html(html); 
+		   });
+		} 
+
+		function attenteQuattre() {
+		   $.ajax({
+		      type: "GET",
+		      url: "js/attenteQuattre.php"
+		   }).done(function (html) {
+		      $('#pousser').html(html); 
+		   });
+		} 
 
 		function combat() {
 		   $.ajax({
 		      type: "GET",
 		      url: "js/combatActuel.php"
 		   }).done(function (html) {
-		      $('#info').html(html); // Retourne dans #maDiv le contenu de ta page
+		      $('#info').html(html); 
 		   });
 		   $.ajax({
 		      type: "GET",
 		      url: "js/combatActuelEnnemi.php"
 		   }).done(function (html) {
-		      $('#infoEnnemi').html(html); // Retourne dans #maDiv le contenu de ta page
+		      $('#infoEnnemi').html(html); 
 		      setTimeout(combat, 3000);
 		   });
 		}  
@@ -49,10 +64,12 @@
 
 
 function choix() {
-	$('#choix').html('<div id="attaqueUne" onClick="finDuTour();"></div>');
-	$('#choix').append('<div id="attaqueDeux" onClick="finDuTourDeux();"></div>');
-	$('#attaqueUne').html('<h3><?PHP echo $listePokemon[0]["attaqueUne"]."</br> (Dégats : ".$listeAttaque[0][3].")" ?></h3>');
+	$('#choix').html('<div id="choixGauche"><div id="attaqueUne" onClick="finDuTour();"></div><div id="attaqueDeux" onClick="finDuTourDeux();"></div></div><div id="choixDroit"><div id="attaqueTrois" onClick="finDuTourTrois();"></div><div id="attaqueQuattre" onClick="finDuTourQuattre();"></div></div>');
+
+	$('#attaqueUne').html('<h3><?PHP echo $listePokemon[0]["attaqueUne"]; ?></h3>');
 	$('#attaqueDeux').html('<h3><?PHP echo $listePokemon[0]["attaqueDeux"]; ?></h3>');
+	$('#attaqueTrois').html('<h3><?PHP echo $listePokemon[0]["attaqueTrois"]."</br>" ?></h3>');
+	$('#attaqueQuattre').html('<h3><?PHP echo $listePokemon[0]["attaqueQuattre"]; ?></h3>');
 }
 
 
@@ -68,6 +85,14 @@ function finDuTour () {
 function finDuTourDeux () {
 	$('#deux').html('<h3 style="padding-left: 300px; padding-top: 75px;">En attente de l\'adversaire</h3>');
 	attenteDeux();
+}
+function finDuTourTrois () {
+	$('#deux').html('<h3 style="padding-left: 300px; padding-top: 75px;">En attente de l\'adversaire</h3>');
+	attenteTrois();
+}
+function finDuTourQuattre () {
+	$('#deux').html('<h3 style="padding-left: 300px; padding-top: 75px;">En attente de l\'adversaire</h3>');
+	attenteQuattre();
 }
 
 

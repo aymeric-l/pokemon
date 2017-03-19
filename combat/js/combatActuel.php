@@ -8,5 +8,5 @@
 			<div id="niveau"><?php echo 'Lvl : '.$listePokemon[0]['niveau']; ?></div>
 			<div id="vie"><?php 
 			//echo 'Pv : '.$listePokemon[0]['vie']; 
-			echo '<progress style="width:100px; color:green;" value="'.$listePokemon[0]["vie"].'" max="'.$listePokemon[0]['vieMax'].'"></progress>';
+			echo '<progress style="width:100px;" value="'.$listePokemon[0]["vie"].'" max="'.$listePokemon[0]['vieMax'].'"></progress>';
 			?></div>

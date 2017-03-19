@@ -64,16 +64,27 @@ body {
       #contenaire #deux #textChoix p {
         font-size: 35px; }
     #contenaire #deux #choix {
+      display: flex;
+      flex-direction: row;
       border: 1px solid black;
       flex: 1; }
       #contenaire #deux #choix p {
         font-size: 20px; }
-      #contenaire #deux #choix #choixUn {
-        padding-top: 30px;
-        padding-left: 50px; }
-      #contenaire #deux #choix #attaqueUne {
-        padding-top: 30px;
-        padding-left: 50px; }
-      #contenaire #deux #choix #attaqueDeux {
-        padding-top: 30px;
-        padding-left: 50px; }
+      #contenaire #deux #choix #choixGauche {
+        display: flex;
+        flex-direction: column; }
+        #contenaire #deux #choix #choixGauche #attaqueUne {
+          padding-top: 30px;
+          padding-left: 50px; }
+        #contenaire #deux #choix #choixGauche #attaqueDeux {
+          padding-top: 30px;
+          padding-left: 50px; }
+      #contenaire #deux #choix #choixDroit {
+        display: flex;
+        flex-direction: column; }
+        #contenaire #deux #choix #choixDroit #attaqueTrois {
+          padding-top: 30px;
+          padding-left: 50px; }
+        #contenaire #deux #choix #choixDroit #attaqueQuattre {
+          padding-top: 30px;
+          padding-left: 50px; }

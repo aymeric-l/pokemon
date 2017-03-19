@@ -63,16 +63,27 @@ body
 			p
 				font-size: 35px
 		#choix
+			display: flex
+			flex-direction: row
 			border: 1px solid black
 			flex: 1
 			p
 				font-size: 20px
-			#choixUn
-				padding-top: 30px
-				padding-left: 50px
-			#attaqueUne
-				padding-top: 30px
-				padding-left: 50px
-			#attaqueDeux
-				padding-top: 30px
-				padding-left: 50px
+			#choixGauche
+				display: flex
+				flex-direction: column
+				#attaqueUne
+					padding-top: 30px
+					padding-left: 50px
+				#attaqueDeux
+					padding-top: 30px
+					padding-left: 50px
+			#choixDroit
+				display: flex
+				flex-direction: column
+				#attaqueTrois
+					padding-top: 30px
+					padding-left: 50px
+				#attaqueQuattre
+					padding-top: 30px
+					padding-left: 50px
