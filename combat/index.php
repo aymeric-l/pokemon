@@ -1,7 +1,8 @@
 <?php
 
 	if(isset($_COOKIE['pseudo'])){
-		include('indexx.php');
+		//include('indexx.php');
+		include('js/recherchePvp.php');
 	}
 
 	else if(isset($_POST['pseudo'])){

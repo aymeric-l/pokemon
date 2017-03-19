@@ -52,6 +52,8 @@
 		   });
 		} 
 
+
+
 		function combat() {
 		   $.ajax({
 		      type: "GET",

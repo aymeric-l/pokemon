@@ -10,7 +10,7 @@ $listeAttaque = $attaque = $bdd->query('SELECT * FROM attaques')->fetchALL();
 
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	<title>Combat pokemon</title>
@@ -19,7 +19,7 @@ $listeAttaque = $attaque = $bdd->query('SELECT * FROM attaques')->fetchALL();
 	<meta charset="utf-8">
 	
 </head>
-<body>
+<body> -->
 <?php if($pseudoJoueurCo == 'bug'){header('Location: index.php');} ?>
 <div id="contenaire">
 
@@ -60,6 +60,6 @@ $listeAttaque = $attaque = $bdd->query('SELECT * FROM attaques')->fetchALL();
 
 </div>
 <?php include('js/script.php'); ?>
-</body>
-</html>
-<?php header('index.php'); ?>
+<!-- </body>
+</html> -->
+<?php //header('index.php'); ?>
