@@ -8,6 +8,14 @@
 		      $('#pousser').html(html); 
 		   });
 		} 
+		function traitementFinDuTour() {
+		   $.ajax({
+		      type: "GET",
+		      url: "js/traitementFinDuTour.php"
+		   }).done(function (html) {
+		      $('#pousser').html(html); 
+		   });
+		} 
 		function attente() {
 		   $.ajax({
 		      type: "GET",
