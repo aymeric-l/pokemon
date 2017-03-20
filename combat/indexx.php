@@ -3,6 +3,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=combat;charset=utf8', 'root', '' );
 if(!isset($_COOKIE['pseudo'])){$pseudoJoueurCo = 'bug';}
 else{$pseudoJoueurCo = $_COOKIE['pseudo'];}
 $adversaire = $_COOKIE['adversaire'];
+$finRecherche = $bdd->prepare('UPDATE joueurs SET recherchePvp="no" WHERE pseudo="'.$pseudoJoueurCo.'" ')->execute();
 $listePokemon = $combat = $bdd->query('SELECT * FROM pokemon WHERE proprio="'.$pseudoJoueurCo.'"')->fetchALL();
 $listePokemonAdverse = $adverse = $bdd->query('SELECT * FROM pokemon WHERE proprio="'.$adversaire.'"')->fetchALL();
 
